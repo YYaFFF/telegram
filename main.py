@@ -36,5 +36,10 @@ def render_progressbar(total, iteration, prefix='', suffix='', length=30, fill='
     return '{0} |{1}| {2}% {3}'.format(prefix, pbar, percent, suffix)
 
 
-bot.reply_on_message(reply)
-bot.run_bot()
+def main():
+    bot.reply_on_message(reply)
+    bot.run_bot()
+
+
+if __name__ == '__main__':
+    main()
