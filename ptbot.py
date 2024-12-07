@@ -29,7 +29,7 @@ class Bot():
         return self.bot.send_message(chat_id=chat_id, text=message).message_id
 
     def update_message(self, chat_id, message_id, new_message):
-        self.logger.debug(f'Update message {message_id}: {new_message}')
+        self.logger.debug(f'`Upda`te message {message_id}: {new_message}')
         self.bot.edit_message_text(chat_id=chat_id, message_id=message_id, text=new_message)
 
     def create_timer(self, timeout_secs, callback, *args, **kwargs):
