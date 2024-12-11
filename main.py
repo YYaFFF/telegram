@@ -3,11 +3,6 @@ import ptbot
 from dotenv import load_dotenv
 from pytimeparse import parse
 
-load_dotenv()
-TG_TOKEN = os.getenv('TELEGRAM_TOKEN')
-TG_CHAT_ID = '718815563'
-bot = ptbot.Bot(TG_TOKEN)
-
 
 def reply(chat_id, text):
     time_sec = parse(text)
@@ -42,4 +37,8 @@ def main():
 
 
 if __name__ == '__main__':
+    load_dotenv()
+    TG_TOKEN = os.getenv('TELEGRAM_TOKEN')
+    TG_CHAT_ID = '718815563'
+    bot = ptbot.Bot(TG_TOKEN)
     main()
