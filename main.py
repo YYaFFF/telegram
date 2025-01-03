@@ -3,6 +3,10 @@ import ptbot
 from dotenv import load_dotenv
 from pytimeparse import parse
 
+load_dotenv()
+TG_TOKEN = os.getenv('TELEGRAM_TOKEN')
+bot = ptbot.Bot(TG_TOKEN)
+
 
 def reply(chat_id, text):
     time_sec = parse(text)
@@ -18,8 +22,8 @@ def notify(sec_left, author_id, message_id, total_time):
                                                   f"{render_progressbar(total_time, current_sec)}")
     else:
         bot.update_message(author_id, message_id, f"Осталось {sec_left} секунд!\n"
-                                                  f"{render_progressbar(total_time,current_sec)}")
-        bot.send_message(author_id,  "Время вышло!")
+                                                  f"{render_progressbar(total_time, current_sec)}")
+        bot.send_message(author_id, "Время вышло!")
 
 
 def render_progressbar(total, iteration, prefix='', suffix='', length=30, fill='█', zfill='░'):
@@ -37,8 +41,4 @@ def main():
 
 
 if __name__ == '__main__':
-    load_dotenv()
-    TG_TOKEN = os.getenv('TELEGRAM_TOKEN')
-    TG_CHAT_ID = '718815563'
-    bot = ptbot.Bot(TG_TOKEN)
     main()
