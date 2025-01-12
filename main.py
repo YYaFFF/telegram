@@ -38,7 +38,7 @@ def main():
 
 if __name__ == '__main__':
     load_dotenv()
-    TG_TOKEN = os.getenv('TELEGRAM_TOKEN')
-    TG_CHAT_ID = '718815563'
-    bot = ptbot.Bot(TG_TOKEN)
+    tg_token = os.getenv('TELEGRAM_TOKEN')
+    tg_chat_id = '718815563'
+    bot = ptbot.Bot(tg_token)
     main()
